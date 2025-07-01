@@ -9,17 +9,17 @@ library("ggplot2")
 data <- read_dta("~/Downloads/Small.dta")
 plot(
      x = as.numeric(data$pay1),
-     y = as.numeric(data$los),
-     xlab = "Payment Type (pay1)",
-     ylab = "Length of Stay (los)",
-     main = "Relationship between LOS and Payment Type",
+     y = as.numeric(data$dispuniform),
+     xlab = "Payment Type",
+     ylab = "Discharge Status",
+     main = "Relationship between LOS and Total Charges",
      pch = 19,
      col = "black",
-     xaxt = "n",
      cex.axis = 0.8,
+     xaxt = "n",
      tcl = -0.5,
      las = 1,
-     ylim = c(0, 380)
+     ylim = c(0,100)
 
 )
 

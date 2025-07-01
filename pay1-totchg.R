@@ -9,19 +9,20 @@ library("ggplot2")
 data <- read_dta("~/Downloads/Small.dta")
 plot(
      x = as.numeric(data$pay1),
-     y = as.numeric(data$los),
-     xlab = "Payment Type (pay1)",
-     ylab = "Length of Stay (los)",
-     main = "Relationship between LOS and Payment Type",
+     y = as.numeric(data$totchg),
+     xlab = "Payment Type",
+     ylab = "Total Charges (U.S. Dollars)",
+     main = "Relationship between LOS and Total Charges",
      pch = 19,
      col = "black",
-     xaxt = "n",
      cex.axis = 0.8,
+     xaxt = "n",
      tcl = -0.5,
      las = 1,
-     ylim = c(0, 380)
-
+     ylim = c(0,1400000)
 )
+
+
 
 
 axis(side = 1,
@@ -30,3 +31,10 @@ axis(side = 1,
      cex.axis = 0.8
 
 )
+axis(
+  side=2,
+  at = 1:7,
+  ylim = c(0,1400000),
+  cex.axis = 0.5
+)
+summary(data$totchg)
